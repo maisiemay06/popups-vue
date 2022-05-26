@@ -91,7 +91,8 @@ a {
 .image-container {
   background-color: #fff;
   height: 100%;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
+  padding-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
