@@ -1,45 +1,35 @@
 <template>
-  <transition name="fade" appear>
-    <div class="popup-overlay" @click="hidePopup"></div>
-  </transition>
+  <div class="popup popup-wht" role="dialog">
+    <p id="close-btn" @click="hidePopup">&times;</p>
 
-  <transition name="pop" appear>
-    <div class="popup popup-wht" role="dialog">
-      <p id="close-btn" @click="hidePopup">&times;</p>
+    <div class="popup-container">
+      <div class="popup-content">
+        <h2 class="popup-title">sorry</h2>
+        <img src="..\assets\sorry-emoji.png" alt="sorry emoji" class="emoji" />
 
-      <div class="popup-container">
-        <div class="popup-content">
-          <h2 class="popup-title">sorry</h2>
+        <p class="popup-text">
+          There's no one else to Meeow with at the moment.
+        </p>
+        <p class="popup-text">
+          Choose a busier time slot by looking for the Book Buddies, or even
+          book a slot to attract people to network when you want to.
+        </p>
+        <div class="book-buddies">
           <img
-            src="..\assets\sorry-emoji.png"
-            alt="sorry emoji"
-            class="emoji"
+            src="..\assets\blue-user-icon.png"
+            alt="blue user icon"
+            class="user-icon"
           />
-
-          <p class="popup-text">
-            There's no one else to Meeow with at the moment.
-          </p>
-          <p class="popup-text">
-            Choose a busier time slot by looking for the Book Buddies, or even
-            book a slot to attract people to network when you want to.
-          </p>
-          <div class="book-buddies">
-            <img
-              src="..\assets\blue-user-icon.png"
-              alt="blue user icon"
-              class="user-icon"
-            />
-            <img
-              src="..\assets\orange-user-icon.png"
-              alt="orange user icon"
-              class="user-icon"
-            />
-          </div>
-          <button @click="hidePopup" class="popup-btn">book more Meeows</button>
+          <img
+            src="..\assets\orange-user-icon.png"
+            alt="orange user icon"
+            class="user-icon"
+          />
         </div>
+        <button @click="hidePopup" class="popup-btn">book more Meeows</button>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>

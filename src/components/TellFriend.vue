@@ -1,76 +1,50 @@
 <template>
-  <transition name="fade" appear>
-    <div class="popup-overlay" @click="hidePopup"></div>
-  </transition>
+  <div class="popup popup-wht invite-friends" role="dialog">
+    <p id="close-btn" @click="hidePopup">&times;</p>
 
-  <transition name="pop" appear>
-    <div class="popup popup-wht invite-friends" role="dialog">
-      <p id="close-btn" @click="hidePopup">&times;</p>
+    <div class="popup-container">
+      <div class="popup-content">
+        <h2 class="popup-title">tell your friends about Meeow</h2>
 
-      <div class="popup-container">
-        <div class="popup-content">
-          <h2 class="popup-title">tell your friends about Meeow</h2>
+        <p class="popup-text">
+          Every new member of Meeow makes the community bigger and better for
+          you and everyone around the world. Invite your friends to join the
+          Meeow community for free.
+        </p>
+        <p class="popup-small">
+          Type your friends' email addresses into the slots below to invite them
+          to join Meeow
+        </p>
 
-          <p class="popup-text">
-            Every new member of Meeow makes the community bigger and better for
-            you and everyone around the world. Invite your friends to join the
-            Meeow community for free.
-          </p>
-          <p class="popup-small">
-            Type your friends' email addresses into the slots below to invite
-            them to join Meeow
-          </p>
-
-          <div class="invite-fields">
-            <input
-              type="email"
-              placeholder="Friend 1"
-              v-model="enteredEmail1"
-            />
-            <input
-              type="email"
-              placeholder="Friend 2"
-              v-model="enteredEmail2"
-            />
-            <input
-              type="email"
-              placeholder="Friend 3"
-              v-model="enteredEmail3"
-            />
-            <input
-              type="email"
-              placeholder="Friend 4"
-              v-model="enteredEmail4"
-            />
-            <input
-              type="email"
-              placeholder="Friend 5"
-              v-model="enteredEmail5"
-            />
-          </div>
-
-          <button
-            v-if="!invitesSent"
-            id="send-invite-btn"
-            class="popup-btn invite-btn"
-            :disabled="buttonDisabled"
-            @click="handleSubmit"
-          >
-            send your invitations now
-          </button>
-          <button
-            v-else
-            id="sent-invite-btn"
-            class="popup-btn invite-btn"
-            disabled
-          >
-            invitations sent! thank you
-          </button>
+        <div class="invite-fields">
+          <input type="email" placeholder="Friend 1" v-model="enteredEmail1" />
+          <input type="email" placeholder="Friend 2" v-model="enteredEmail2" />
+          <input type="email" placeholder="Friend 3" v-model="enteredEmail3" />
+          <input type="email" placeholder="Friend 4" v-model="enteredEmail4" />
+          <input type="email" placeholder="Friend 5" v-model="enteredEmail5" />
         </div>
-        <a href="" @lick="hidePopup"> Don't show me this again </a>
+
+        <button
+          v-if="!invitesSent"
+          id="send-invite-btn"
+          class="popup-btn invite-btn"
+          :disabled="buttonDisabled"
+          @click="handleSubmit"
+        >
+          send your invitations now
+        </button>
+        <button
+          v-else
+          id="sent-invite-btn"
+          class="popup-btn invite-btn"
+          disabled
+        >
+          invitations sent! thank you
+        </button>
       </div>
+      <a href="" @lick="hidePopup"> Don't show me this again </a>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -180,5 +154,21 @@ input::placeholder {
 a {
   margin-top: 0;
   padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .invite-friends {
+    width: 85vw;
+  }
+  .popup-container {
+    padding-block: 20px;
+  }
+  .invite-fields {
+    padding: 0 10px;
+    width: 90%;
+  }
+  input {
+    height: 40px;
+  }
 }
 </style>
