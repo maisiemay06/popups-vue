@@ -10,10 +10,10 @@
         />
         <h2 class="popup-title">you booked a Meeow!</h2>
         <p class="popup-subtitle">
-          come back to the calendar at the time of your booking
+          We've sent you a confirmation email to prove it.
         </p>
-        <p class="popup-text">
-          &#40;entry to every Meeow closes at 3 mins past the hour&#41;
+        <p class="popup-text footer">
+          careful... entry to every Meeow closes at 3 mins past the hour
         </p>
       </div>
     </div>
@@ -33,5 +33,25 @@ export default {
 .popup .emoji {
   height: 55px;
   margin-bottom: 10px;
+}
+
+#close-btn {
+  top: -75px;
+}
+
+.popup-subtitle {
+  margin-top: -20px;
+}
+
+.footer {
+  margin-top: 90px;
+  margin-bottom: -30px;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
 }
 </style>
